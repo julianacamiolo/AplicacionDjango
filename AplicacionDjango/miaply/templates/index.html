@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block content %}
+
+<!--esto es un comentario en html-->
+{% comment 'esto es un comentario' %}
+    <h1>Hola</h1>
+{% endcomment %}
+<h1 class="title"> {{ title }} </h1>
+
+<p>{{ mi_variable }}</p>
+
+{% if nombre %}
+    <p>{{ nombre }}</p>
+{% else %}
+    <strong></strong>
+{% endif %}
+
+<h3>Listado de lenguajes de programación</h3>
+<ul>
+    {% for lenguaje in lenguajes %}
+        <li>{{ lenguaje }}</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
+

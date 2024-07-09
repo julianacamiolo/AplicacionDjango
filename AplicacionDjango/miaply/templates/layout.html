@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <title> 
+        {% block title %}
+        <!--titulo de cada pagina-->
+        {% endblock  %}
+        | Juliana Camiolo
+    </title>
+    
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}"/>
+</head>
+    
+<body>
+    <!-- Cabecera de la pagina -->
+    <header>
+        <div id="logotipo">
+            <!--logo django-->
+            <img src="{% static 'images/logo.png' %}" />
+            <h1> Sitio web con Django </h1> 
+        </div> 
+          
+    </header>
+
+    <nav>
+        <ul>
+            <li>
+                <a href= "{% url 'inicio' %}" > Inicio</a>
+            </li> 
+            <li>
+                <a href="{% url 'articulos' %}">Articulos</a>
+            </li> 
+            <li>
+                <a href="{% url 'create' %}">Crear Articulo</a>
+            </li> 
+            <li>
+                <a href="{% url 'create_full' %}">Crear Articulo 2</a>
+            </li> 
+            <li>
+                <a href="{% url 'viaje_seguro' %}">Viaje Seguro</a>
+            </li> 
+            <li>
+                <a href="{% url 'pagina_web' %}">Pagina Web</a>
+            </li> 
+            <li>
+               <a href="{% url 'contacto' 'Juliana' 'Camiolo' %}">Contacto</a>
+            </li> 
+        </ul>
+    </nav>
+
+    <div class="barra">
+        <span class="esquina-izquierda"></span>
+        <span class="relleno-barra"></span>
+        <span class="esquina-derecha"></span>
+    </div>    
+           
+    <div >
+
+        <div class= "box">
+            <h2 class="title"></h2>
+            {% block content %}
+            <!--codigo que viene de la s templates-->
+            <strong></strong>
+            {% endblock %}
+        </div>   
+       
+    </div>
+    
+    <footer>
+        Master en Python| Juliana Camiolo
+    </footer> 
+    
+</body>
+
+</html>

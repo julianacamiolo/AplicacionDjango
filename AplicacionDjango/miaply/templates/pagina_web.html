@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+{% block title %}Pagina web{% endblock %}
+
+{% block content %}
+<h1 class="title">Pagina web</h1>
+<p>Creada por Juliana</p> 
+
+{% load filters %}
+{{ " Gracias a Todos y Todas " | saludo | safe}}
+{% endblock %}
